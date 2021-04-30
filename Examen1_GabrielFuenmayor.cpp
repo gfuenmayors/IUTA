@@ -7,27 +7,21 @@ int main()
     while(s == 1)
     {
         system("cls");
-        cout << "Ingrese un Numero: " << endl;
+        cout << "Ingrese un Numero: ";
         cin >> Numero;
 
         Resultado = Numero % 2;
+
         if(Resultado == 0) // Numero Par
-        {
-            cout << "\nEl Numero: ";
-            cout << Numero;
-            cout << " Es Par\n" << endl;
-        }
-        else // Numero Impar
-        {
-            cout << "\nEl Numero: ";
-            cout << Numero;
-            cout << " Es Impar\n" << endl;
-        }
-        cout << "Desea Ingresar Otro Numero?\n1 - Si\n2 - No" << endl;
+        { cout << "\nEl Numero: " << Numero << " Es Par\n"; }
+        else // Numero Impar 
+        { cout << "\nEl Numero: " << Numero << " Es Impar\n"; }
+
+        cout << "\nDesea Ingresar Otro Numero?\n1 - Si\n2 - No\n";
         cin >> s;
         if(s != 1)  { s = 2; }
     }
     system("cls");
-    cout << "\n\nGracias por Usar el Programa" << endl;
+    cout << "\nGracias por Usar el Programa\n";
     system("pause");
 }

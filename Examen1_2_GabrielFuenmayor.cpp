@@ -12,14 +12,10 @@ int main()
         cin >> costo;
 
         resultado = (costo * 20) / 100;
-        cout << "\nEl Costo de la Primera Cuota es: ";
-        cout << resultado;
-        cout << " BsS";
+        cout << "\nEl Costo de la Primera Cuota es: " << resultado << " BsS";
 
-        cuotas = (costo - resultado) / 36; // Costo Total del Semestre - Costo de la Primera Cuota * 3 Años(Llevado a Meses)
-        cout << "\n\nDebera Pagar: ";
-        cout << cuotas;
-        cout << " BsS Mensualmente por 3 Años\n\nDesea Cacular de Nuevo?\n1 - Si\n2 - No\n";
+        cuotas = (costo - resultado) / 36; // Costo Total del Semestre - Costo de la Primera Cuota / 3 Años(Llevado a Meses)
+        cout << "\n\nDebera Pagar: " << cuotas << " BsS Mensualmente por 3 Años\n\nDesea Cacular de Nuevo?\n1 - Si\n2 - No\n";
         cin >> s;
         if(s != 1)  { s = 2; }
     }
