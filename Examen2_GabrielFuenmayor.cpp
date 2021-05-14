@@ -115,15 +115,15 @@ main()
 				cout << "|--------------------------------------------|\n\n";
 				system("PAUSE");	
 			}
-			else if(menu[1] == 4) { menu[0] = 0; main(); }
+			else if(menu[1] == 4) { menu[0] = 0; }
 			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
 		}
 		else if(menu[0] == 2)
 		{
 			system("CLS");
 			//-------------------------------------
-			if(color == 0) { menu[0] = 0; main(); }
-			else if(coordenada == 0) { menu[0] = 0; main(); }
+			if(color == 0) { menu[0] = 0; }
+			else if(coordenada == 0) { menu[0] = 0;  }
 			//-------------------------------------
 			if(mayor == 0) menu[2] = 1;	
 			else if(menor == 0) menu[2] = 2;
@@ -178,7 +178,7 @@ main()
 				obj2.ImprimirRectangulo();
 				system("PAUSE");
 			}
-			else if(menu[2] == 5) { menu[0] = 0; main(); }
+			else if(menu[2] == 5) { menu[0] = 0; }
 			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
 		}
 		else if(menu[0] == 3)
