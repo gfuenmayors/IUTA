@@ -71,13 +71,12 @@ main()
 		if(escala == 2 or escala == 0.5) obj2.Escala = escala;
 		else escala = 0;
 		//---------------------
-		system("CLS");
-		if(color == 0 or coordenada == 0) { cout << "\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA\n\n"; }
+		system("CLS"); menu[0] = 0;
+		if(color == 0 or coordenada == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA\n\n"; }
 		cout << "ELIGA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n1 - DEFINIR FORMA\n2 - DEFINIR RECTANGULO\n3 - SALIR\n";
 		cin >> menu[0];
 		if(menu[0] == 1)
 		{
-				
 			system("CLS");
 			//-------------------------------------
 			if(color == 0) menu[1] = 1;	
@@ -116,8 +115,8 @@ main()
 				cout << "|--------------------------------------------|\n\n";
 				system("PAUSE");	
 			}
-			else if(menu[2] == 4) { menu[0] = 0; main(); }
-			else { system("CLS"); cout << "ERROR\n\n"; }
+			else if(menu[1] == 4) { menu[0] = 0; main(); }
+			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
 		}
 		else if(menu[0] == 2)
 		{
@@ -180,7 +179,7 @@ main()
 				system("PAUSE");
 			}
 			else if(menu[2] == 5) { menu[0] = 0; main(); }
-			else { system("CLS"); cout << "ERROR\n\n"; }
+			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
 		}
 		else if(menu[0] == 3)
 		{
@@ -189,7 +188,7 @@ main()
 			cin >> s;
 			if(s != 1) s = 0;	
 		}
-		else { system("CLS"); cout << "ERROR\n\n"; }
+		else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
 	}
 	system("CLS"); 
 	cout << "GRACIAS POR USAR EL PROGRAMA.\n\n\n";
