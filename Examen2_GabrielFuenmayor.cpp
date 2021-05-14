@@ -73,7 +73,7 @@ main()
 		//---------------------
 		system("CLS");
 		if(color == 0 or coordenada == 0) { cout << "\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA\n\n"; }
-		cout << "ELIGA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n1 - DFINIR FORMA\n2 - DEFINIR RECTANGULO\n3 - SALIR\n";
+		cout << "ELIGA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n1 - DEFINIR FORMA\n2 - DEFINIR RECTANGULO\n3 - SALIR\n";
 		cin >> menu[0];
 		if(menu[0] == 1)
 		{
