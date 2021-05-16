@@ -31,7 +31,7 @@ class Forma
 	}
 	Mover() 
 	{ 
-		system("CLS"); MenuOpciones[0] = 0;
+		system("CLS"); MenuOpciones[1] = 0;
 		if(Coordenada == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL: " << Coordenada; 
@@ -70,7 +70,7 @@ class Rectangulo: Forma
 	}
 	AsignarLadoMayor() 
 	{ 
-		system("CLS"); MenuOpciones[0] = 0;
+		system("CLS"); MenuOpciones[1] = 0;
 		if(LadoMayor == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tVALOR ACTUAL DEL LADO MAYOR DEL RECTANGULO: " << LadoMayor; 
@@ -86,7 +86,7 @@ class Rectangulo: Forma
 	}
 	AsignarEscala() 
 	{ 
-		system("CLS"); MenuOpciones[0] = 0;
+		system("CLS"); MenuOpciones[2] = 0;
 		if(Escala == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tVALOR ACTUAL DE LA ESCALA DEL RECTANGULO: " << Escala; 
