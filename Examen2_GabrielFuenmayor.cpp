@@ -106,7 +106,7 @@ class Rectangulo: Forma
 			}
 		}
 	}
-	void ImprimirRectangulo(void)
+	ImprimirRectangulo()
 	{
 		//----------------------------------
 		cout << "\tLADO MAYOR: " << rLadoMayor << "\n\tLADO MENOR: " << rLadoMenor << "\n";
