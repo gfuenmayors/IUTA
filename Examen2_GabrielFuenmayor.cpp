@@ -10,12 +10,12 @@ class Forma
 	public:
 		float Coordenada;
 		string Nombre, Color;
-	Imprimir()
+	void Imprimir()
 	{
 		cout << "\t|--------------------------------------------|"; 
 		cout << "\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS: " << Coordenada << "\n\n"; 
 	}
-	AsignarColor() 
+	void AsignarColor() 
 	{ 
 		system("CLS"); MenuOpciones[0] = 0;
 		cout << "\t|--------------------------------------------|\n"; 
@@ -29,7 +29,7 @@ class Forma
 			cin >> Color;
 		}
 	}
-	Mover() 
+	void Mover() 
 	{ 
 		system("CLS"); MenuOpciones[1] = 0;
 		if(Coordenada == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
@@ -52,7 +52,7 @@ class Rectangulo: Forma
 		int MenuOpciones[4];
 	public:
 		float LadoMenor, LadoMayor, Area, Perimetro, Escala, EscalaConsulta, rLadoMenor, rLadoMayor;
-	AsignarLadoMenor() 
+	void AsignarLadoMenor() 
 	{ 
 		system("CLS"); MenuOpciones[0] = 0;
 		if(LadoMenor == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
@@ -68,7 +68,7 @@ class Rectangulo: Forma
 			rLadoMenor = LadoMenor;
 		}
 	}
-	AsignarLadoMayor() 
+	void AsignarLadoMayor() 
 	{ 
 		system("CLS"); MenuOpciones[1] = 0;
 		if(LadoMayor == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
@@ -84,7 +84,7 @@ class Rectangulo: Forma
 			rLadoMayor = LadoMayor;
 		}
 	}
-	AsignarEscala() 
+	void AsignarEscala() 
 	{ 
 		system("CLS"); MenuOpciones[2] = 0;
 		if(Escala == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
@@ -106,7 +106,7 @@ class Rectangulo: Forma
 			}
 		}
 	}
-	ImprimirRectangulo()
+	void ImprimirRectangulo()
 	{
 		//----------------------------------
 		cout << "\tLADO MAYOR: " << rLadoMayor << "\n\tLADO MENOR: " << rLadoMenor << "\n";
