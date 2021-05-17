@@ -143,7 +143,7 @@ main()
 	//---------------------
 	while(s == 1)
 	{
-		system("CLS"); menu[0] = 0;
+		system("CLS"); menu[0] = 0; menu[1] = 0; menu[2] = 0;
 		if(obj1.Coordenada == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA"; }
 		cout << "\n\n\tELIGA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n\t1 - DEFINIR FORMA\n\t2 - DEFINIR RECTANGULO\n\t3 - SALIR\n\t";
 		cin >> menu[0];
