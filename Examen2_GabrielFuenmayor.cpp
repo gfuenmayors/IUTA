@@ -9,7 +9,8 @@ class Forma
 		int MenuOpciones[2];
 	public:
 		float Coordenada;
-		string Nombre, Color;
+		char Nombre;
+		string Color;
 	void Imprimir()
 	{
 		cout << "\t|--------------------------------------------|"; 
@@ -135,7 +136,7 @@ main()
 	//---------------------
 	obj1.Coordenada = 0;
 	obj1.Color = "Morado";
-	obj1.Nombre = "OBJETO 1";
+	obj1.Nombre = 'A';
 	
 	obj2.LadoMayor = 0;
 	obj2.LadoMenor = 0;
