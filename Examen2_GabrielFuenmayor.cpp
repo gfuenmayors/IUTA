@@ -11,6 +11,8 @@ class Forma
 		float Coordenada;
 		char Nombre;
 		string Color;
+		
+	Forma() { Coordenada = 0; Color = "Morado"; Nombre = 'A'; }
 	void Imprimir()
 	{
 		cout << "\t|--------------------------------------------|"; 
@@ -53,6 +55,8 @@ class Rectangulo: Forma
 		int MenuOpciones[4];
 	public:
 		float LadoMenor, LadoMayor, Area, Perimetro, Escala, EscalaConsulta, rLadoMenor, rLadoMayor;
+		
+	Rectangulo() { LadoMayor = 0; LadoMenor = 0; Escala = 0; }
 	void AsignarLadoMenor() 
 	{ 
 		system("CLS"); MenuOpciones[0] = 0;
@@ -133,14 +137,6 @@ main()
 	int menu[2], s = 1;
 	Forma obj1;
 	Rectangulo obj2;
-	//---------------------
-	obj1.Coordenada = 0;
-	obj1.Color = "Morado";
-	obj1.Nombre = 'A';
-	
-	obj2.LadoMayor = 0;
-	obj2.LadoMenor = 0;
-	obj2.Escala = 0;
 	//---------------------
 	while(s == 1)
 	{
