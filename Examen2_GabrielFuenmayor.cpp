@@ -7,6 +7,7 @@ class Forma
 {
 	private:
 		int MenuOpciones[2];
+		
 	public:
 		float Coordenada;
 		char Nombre;
@@ -49,7 +50,7 @@ class Forma
 	}
 };
 
-class Rectangulo: Forma
+class Rectangulo: public Forma
 {	
 	private:
 		int MenuOpciones[4];
@@ -113,6 +114,7 @@ class Rectangulo: Forma
 	}
 	void ImprimirRectangulo()
 	{
+		Imprimir();
 		//----------------------------------
 		cout << "\tLADO MAYOR: " << rLadoMayor << "\n\tLADO MENOR: " << rLadoMenor << "\n";
 		cout << "\n\tESCALA DEL RECTANGULO: " << Escala << "\n";
@@ -135,8 +137,7 @@ class Cuadrado: Rectangulo { };
 main()
 {
 	int menu[2], s = 1;
-	Forma obj1;
-	Rectangulo obj2;
+	Rectangulo obj1;
 	//---------------------
 	while(s == 1)
 	{
@@ -171,9 +172,9 @@ main()
 		else if(menu[0] == 2) // Rectangulo
 		{
 			system("CLS");
-			if(obj2.LadoMayor == 0) menu[2] = 1;	
-			else if(obj2.LadoMenor == 0) menu[2] = 2;
-			else if(obj2.Escala == 0) menu[2] = 3;
+			if(obj1.LadoMayor == 0) menu[2] = 1;	
+			else if(obj1.LadoMenor == 0) menu[2] = 2;
+			else if(obj1.Escala == 0) menu[2] = 3;
 			else 
 			{
 				cout << "\n\n\n\t[ DEFINIR RECTANGULO ]\n\n";
@@ -181,9 +182,9 @@ main()
 				cin >> menu[2];	
 			}
 			//-------------------------------------
-			if(menu[2] == 1) obj2.AsignarLadoMayor();
-			else if(menu[2] == 2) obj2.AsignarLadoMenor();
-			else if(menu[2] == 3) obj2.AsignarEscala();
+			if(menu[2] == 1) obj1.AsignarLadoMayor();
+			else if(menu[2] == 2) obj1.AsignarLadoMenor();
+			else if(menu[2] == 3) obj1.AsignarEscala();
 			else if(menu[2] == 4)
 			{
 				if(obj1.Coordenada == 0) obj1.Mover();
@@ -191,8 +192,7 @@ main()
 				{
 					system("CLS");
 					cout << "\n\n\t[ RECTANGULO ]\n\n";
-					obj1.Imprimir();
-					obj2.ImprimirRectangulo();
+					obj1.ImprimirRectangulo();
 					system("PAUSE");
 				}
 			}
