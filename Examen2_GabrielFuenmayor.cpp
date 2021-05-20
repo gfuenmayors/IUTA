@@ -114,6 +114,8 @@ class Rectangulo: public Forma
 	}
 	void ImprimirRectangulo()
 	{
+		system("CLS");
+		cout << "\n\n\t[ RECTANGULO ]\n\n";
 		Imprimir();
 		//----------------------------------
 		cout << "\tLADO MAYOR: " << rLadoMayor << "\n\tLADO MENOR: " << rLadoMenor << "\n";
@@ -128,7 +130,8 @@ class Rectangulo: public Forma
 		cout << "\tAREA DEL RECTANGULO: " << Area;
 		Perimetro = (2*LadoMenor)+(2*LadoMayor);
 		cout << "\n\tPERIMETRO DEL RECTANGULO: " << Perimetro;
-		cout << "\n\t|--------------------------------------------|\n\n";	
+		cout << "\n\t|--------------------------------------------|\n\n";
+		system("PAUSE");	
 	}
 };
 
@@ -166,7 +169,7 @@ main()
 				cout << "\t|--------------------------------------------|\n\n";
 				system("PAUSE");	
 			}
-			else if(menu[1] == 4) { menu[0] = 0; }
+			else if(menu[1] == 4) menu[0] = 0;
 			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
 		}
 		else if(menu[0] == 2) // Rectangulo
@@ -188,15 +191,9 @@ main()
 			else if(menu[2] == 4)
 			{
 				if(obj1.Coordenada == 0) obj1.Mover();
-				else
-				{
-					system("CLS");
-					cout << "\n\n\t[ RECTANGULO ]\n\n";
-					obj1.ImprimirRectangulo();
-					system("PAUSE");
-				}
+				else obj1.ImprimirRectangulo();
 			}
-			else if(menu[2] == 5) { menu[0] = 0; }
+			else if(menu[2] == 5) menu[0] = 0;
 			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
 		}
 		else if(menu[0] == 3) // Salir
