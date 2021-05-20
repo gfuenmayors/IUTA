@@ -11,12 +11,20 @@ class Forma
 		float Coordenada;
 		char Nombre;
 		string Color;
+		int EnRectangulo;
 		
-	Forma() { Coordenada = 0; Color = "MORADO"; Nombre = 'A'; }
-	void Imprimir()
+	Forma() { Coordenada = 0; Color = "MORADO"; Nombre = 'A'; EnRectangulo = 0; }
+	void ImprimirForma()
 	{
-		cout << "\t|--------------------------------------------|"; 
-		cout << "\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS: " << Coordenada << "\n\n"; 
+		if(EnRectangulo == 0)
+		{
+			system("CLS");
+			cout << "\t|--------------------------------------------|"; 
+			cout << "\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS DEL CENTRO: " << Coordenada << "\n\n";
+			cout << "\t|--------------------------------------------|\n\n";
+			system("PAUSE"); 
+		}
+		else cout << "\t|--------------------------------------------|\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS DEL CENTRO: " << Coordenada << "\n\n"; 	
 	}
 	void AsignarColor() 
 	{ 
@@ -38,12 +46,12 @@ class Forma
 		if(Coordenada == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL: " << Coordenada; 
-		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
+		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[1];
 		if(MenuOpciones[1] == 1)
 		{
-			cout << "\n\tINGRESE LA NUEVA COORDENADA DE LA FORMA: ";
+			cout << "\n\tINGRESE LA NUEVA COORDENADA DEL CENTRO DE LA FORMA: ";
 			cin >> Coordenada;
 		}
 	}
@@ -115,7 +123,7 @@ class Rectangulo: public Forma
 	{
 		system("CLS");
 		cout << "\n\n\t[ RECTANGULO ]\n\n";
-		Imprimir();
+		ImprimirForma();
 		//----------------------------------
 		cout << "\tLADO MAYOR: " << rLadoMayor << "\n\tLADO MENOR: " << rLadoMenor << "\n";
 		cout << "\n\tESCALA DEL RECTANGULO: " << Escala << "\n";
@@ -141,21 +149,20 @@ main()
 	int menu[2], s = 1;
 	menu[0] = 0; menu[1] = 0; menu[2] = 0;
 	Rectangulo obj1;
-	//---------------------
 	while(s == 1)
 	{
-		system("CLS");
-		if(menu[0] == 0)
+		if(menu[0] == 0) // MENU PRINCIPAL
 		{
+			system("CLS");
 			if(obj1.Coordenada == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA"; }
 			cout << "\n\n\tELIGA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n\t1 - DEFINIR FORMA\n\t2 - DEFINIR RECTANGULO\n\t3 - SALIR\n\t";
 			cin >> menu[0];
 		}
-		else if(menu[0] == 1) // Forma
+		else if(menu[0] == 1) // DEFINIR FORMA
 		{
 			system("CLS");
 			//-------------------------------------
-			if(obj1.Coordenada == 0) menu[1] = 2;
+			if(obj1.Coordenada == 0) menu[1] = 2; // VALIDACION DE LA COORDENADA DEL CENTRO DE LA FORMA
 			else 
 			{
 				cout << "\n\n\n\t[ DEFINIR FORMA ]\n\n";
@@ -163,25 +170,18 @@ main()
 				cin >> menu[1];	
 			}
 			//-------------------------------------
-			if(menu[1] == 1) { obj1.AsignarColor(); menu[0] = 1; }
-			else if(menu[1] == 2) { obj1.Mover(); menu[0] = 1; }
-			else if(menu[1] == 3)
-			{
-				system("CLS");
-				obj1.Imprimir();
-				cout << "\t|--------------------------------------------|\n\n";
-				system("PAUSE");
-				 menu[0] = 1;	
-			}
-			else if(menu[1] == 4) menu[0] = 0;
-			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
+			if(menu[1] == 1) { obj1.AsignarColor(); menu[0] = 1; } // ASIGNAR COLOR A LA FORMA
+			else if(menu[1] == 2) { obj1.Mover(); menu[0] = 1; } // ASIGNAR VALOR AL CENTRO DE LA FORMA
+			else if(menu[1] == 3) { obj1.EnRectangulo = 0; obj1.ImprimirForma(); menu[0] = 1; } // IMPRIMIR DATOS DE LA FORMA
+			else if(menu[1] == 4) menu[0] = 0; // VOLVER AL MENU PRINCIPAL
+			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); } // NO RECONOCE OPCION DE LA LISTA
 		}
-		else if(menu[0] == 2) // Rectangulo
+		else if(menu[0] == 2) // DEFINIR RECTANGULO
 		{
 			system("CLS");
-			if(obj1.LadoMayor == 0) menu[2] = 1;		
-			else if(obj1.LadoMenor == 0) menu[2] = 2;
-			else if(obj1.Escala == 0) menu[2] = 3;
+			if(obj1.LadoMayor == 0) menu[2] = 1; // VALIDACION DEL LADO MAYOR DEL RECTANGULO
+			else if(obj1.LadoMenor == 0) menu[2] = 2; // VALIDACION DEL LADO MENOR DEL RECTANGULO
+			else if(obj1.Escala == 0) menu[2] = 3; // VALIDACION DE LA ESCALA DEL RECTANGULO
 			else 
 			{
 				cout << "\n\n\n\t[ DEFINIR RECTANGULO ]\n\n";
@@ -189,18 +189,18 @@ main()
 				cin >> menu[2];	
 			}
 			//-------------------------------------
-			if(menu[2] == 1) { obj1.AsignarLadoMayor(); menu[0] = 2; }			
-			else if(menu[2] == 2) { obj1.AsignarLadoMenor(); menu[0] = 2; }
-			else if(menu[2] == 3) { obj1.AsignarEscala(); menu[0] = 2; }
-			else if(menu[2] == 4)
+			if(menu[2] == 1) { obj1.AsignarLadoMayor(); menu[0] = 2; } // ASIGNAR VALOR AL LADO MAYOR DEL RECTANGULO			
+			else if(menu[2] == 2) { obj1.AsignarLadoMenor(); menu[0] = 2; } // ASIGNAR VALOR AL LADO MENOR DEL RECTANGULO
+			else if(menu[2] == 3) { obj1.AsignarEscala(); menu[0] = 2; } // ASIGNAR LA ESCALA DEL RECTANGULO
+			else if(menu[2] == 4) // IMPRIMIR RECTANGULO
 			{
-				if(obj1.Coordenada == 0) { obj1.Mover();  menu[0] = 2; }
-				else { obj1.ImprimirRectangulo();  menu[0] = 2; }
+				if(obj1.Coordenada == 0) { obj1.Mover(); menu[0] = 2; } // VALIDACION DE LA COORDENADA DEL CENTRO DE LA FORMA
+				else { obj1.EnRectangulo = 1; obj1.ImprimirRectangulo(); menu[0] = 2; } // IMPRIMIR
 			}
-			else if(menu[2] == 5) menu[0] = 0;
-			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); }
+			else if(menu[2] == 5) menu[0] = 0; // VOLVER AL MENU PRINCIPAL
+			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); } // NO RECONOCE OPCION DE LA LISTA
 		}
-		else if(menu[0] == 3) // Salir
+		else if(menu[0] == 3) // SALIR DEL PROGRAMA
 		{
 			system("CLS");
 			cout << "\n\n\tSEGURO QUE QUIERES SALIR?\n\n\t1 - NO\n\t2 - SI\n\t";
@@ -208,7 +208,7 @@ main()
 			if(s != 1) s = 0;
 			else menu[0] = 0;	
 		}
-		else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); menu[0] = 0; }
+		else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); menu[0] = 0; } // NO RECONOCE OPCION DE LA LISTA
 	}
 	system("CLS"); 
 	cout << "\n\n\n\tGRACIAS POR USAR EL PROGRAMA.\n\n\n\t";
