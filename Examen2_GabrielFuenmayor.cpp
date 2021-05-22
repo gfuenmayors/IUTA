@@ -6,25 +6,25 @@ using namespace std;
 class Forma
 {
 	private:
-		int MenuOpciones[2];
+		int MenuOpciones[3];
 	public:
-		float Coordenada;
+		float CoordenadaX, CoordenadaY;
 		char* Nombre;
 		string Color;
 		int EnRectangulo;
 		
-	Forma() { Coordenada = 0; Color = "MORADO"; Nombre = "OBJETO 01"; EnRectangulo = 0; }
+	Forma() { CoordenadaX = 0; CoordenadaY = 0; Color = "MORADO"; Nombre = "OBJETO 01"; EnRectangulo = 0; }
 	void ImprimirForma()
 	{
 		if(EnRectangulo == 0)
 		{
 			system("CLS");
 			cout << "\t|--------------------------------------------|"; 
-			cout << "\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS DEL CENTRO: " << Coordenada << "\n\n";
-			cout << "\t|--------------------------------------------|\n\n";
+			cout << "\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS DEL CENTRO: X: " << CoordenadaX << " Y: "<< CoordenadaY <<"\n\n";
+			cout << "\t|--------------------------------------------|\n\n\t";
 			system("PAUSE"); 
 		}
-		else cout << "\t|--------------------------------------------|\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS DEL CENTRO: " << Coordenada << "\n\n"; 	
+		else cout << "\t|--------------------------------------------|\n\n\tNOMBRE: " << Nombre << "\n\n\tCOLOR: " << Color << "\n\tCOORDENADAS DEL CENTRO: X: " << CoordenadaX << " Y: "<< CoordenadaY <<"\n\n"; 	
 	}
 	void AsignarColor() 
 	{ 
@@ -43,16 +43,29 @@ class Forma
 	void Mover() 
 	{ 
 		system("CLS"); MenuOpciones[1] = 0;
-		if(Coordenada == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
+		if(CoordenadaX == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
+		else if(CoordenadaY == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
-		cout << "\n\tCOORDENADA ACTUAL: " << Coordenada; 
-		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
+		cout << "\n\tCOORDENADA ACTUAL X: " << CoordenadaX; 
+		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (X) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[1];
 		if(MenuOpciones[1] == 1)
 		{
-			cout << "\n\tINGRESE LA NUEVA COORDENADA DEL CENTRO DE LA FORMA: ";
-			cin >> Coordenada;
+			cout << "\n\tINGRESE LA NUEVA COORDENADA(X) DEL CENTRO DE LA FORMA: ";
+			cin >> CoordenadaX;
+		}
+		//--------------------------------------------------------------------
+		system("CLS"); MenuOpciones[2] = 0;
+		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\tCOORDENADA ACTUAL Y: " << CoordenadaY; 
+		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (Y) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
+		cout << "\n\t|--------------------------------------------|\n\n\t";
+		cin >> MenuOpciones[2];
+		if(MenuOpciones[2] == 1)
+		{
+			cout << "\n\tINGRESE LA NUEVA COORDENADA(Y) DEL CENTRO DE LA FORMA: ";
+			cin >> CoordenadaY;
 		}
 	}
 };
@@ -114,7 +127,7 @@ class Rectangulo: public Forma
 			if(EscalaConsulta == 2 or EscalaConsulta == 0.5) Escala = EscalaConsulta;
 			else 
 			{
-				cout << "\n\n\tERROR: LA ESCALA DEBE SER: 0.5 o 2\n\n";
+				cout << "\n\n\tERROR: LA ESCALA DEBE SER: 0.5 o 2\n\n\t";
 				system("PAUSE");	
 			}
 		}
@@ -137,7 +150,7 @@ class Rectangulo: public Forma
 		cout << "\tAREA DEL RECTANGULO: " << Area;
 		Perimetro = (2*LadoMenor)+(2*LadoMayor);
 		cout << "\n\tPERIMETRO DEL RECTANGULO: " << Perimetro;
-		cout << "\n\t|--------------------------------------------|\n\n";
+		cout << "\n\t|--------------------------------------------|\n\n\t";
 		system("PAUSE");	
 	}
 };
@@ -154,7 +167,8 @@ main()
 		if(menu[0] == 0) // MENU PRINCIPAL
 		{
 			system("CLS");
-			if(obj1.Coordenada == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA"; }
+			if(obj1.CoordenadaX == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA"; }
+			else if(obj1.CoordenadaY == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA"; }
 			cout << "\n\n\tELIJA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n\t1 - DEFINIR FORMA\n\t2 - DEFINIR RECTANGULO\n\t3 - SALIR\n\t";
 			cin >> menu[0];
 		}
@@ -162,7 +176,8 @@ main()
 		{
 			system("CLS");
 			//-------------------------------------
-			if(obj1.Coordenada == 0) menu[1] = 2; // VALIDACION DE LA COORDENADA DEL CENTRO DE LA FORMA
+			if(obj1.CoordenadaX == 0) menu[1] = 2; // VALIDACION DE LA COORDENADA X DEL CENTRO DE LA FORMA
+			else if(obj1.CoordenadaY == 0) menu[1] = 2; // VALIDACION DE LA COORDENADA Y DEL CENTRO DE LA FORMA
 			else 
 			{
 				cout << "\n\n\n\t[ DEFINIR FORMA ]\n\n";
@@ -194,7 +209,8 @@ main()
 			else if(menu[2] == 3) { obj1.AsignarEscala(); menu[0] = 2; } // ASIGNAR LA ESCALA DEL RECTANGULO
 			else if(menu[2] == 4) // IMPRIMIR RECTANGULO
 			{
-				if(obj1.Coordenada == 0) { obj1.Mover(); menu[0] = 2; } // VALIDACION DE LA COORDENADA DEL CENTRO DE LA FORMA
+				if(obj1.CoordenadaX == 0) { obj1.Mover(); menu[0] = 2; } // VALIDACION DE LA COORDENADA X DEL CENTRO DE LA FORMA
+				else if(obj1.CoordenadaY == 0) { obj1.Mover(); menu[0] = 2; } // VALIDACION DE LA COORDENADA Y DEL CENTRO DE LA FORMA
 				else { obj1.EnRectangulo = 1; obj1.ImprimirRectangulo(); menu[0] = 2; } // IMPRIMIR
 			}
 			else if(menu[2] == 5) menu[0] = 0; // VOLVER AL MENU PRINCIPAL
@@ -214,3 +230,4 @@ main()
 	cout << "\n\n\n\tGRACIAS POR USAR EL PROGRAMA.\n\n\n\t";
 	system("PAUSE");
 };
+
