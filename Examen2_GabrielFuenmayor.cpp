@@ -9,11 +9,11 @@ class Forma
 		int MenuOpciones[2];
 	public:
 		float Coordenada;
-		char Nombre;
+		char* Nombre;
 		string Color;
 		int EnRectangulo;
 		
-	Forma() { Coordenada = 0; Color = "MORADO"; Nombre = 'A'; EnRectangulo = 0; }
+	Forma() { Coordenada = 0; Color = "MORADO"; Nombre = "OBJETO01"; EnRectangulo = 0; }
 	void ImprimirForma()
 	{
 		if(EnRectangulo == 0)
