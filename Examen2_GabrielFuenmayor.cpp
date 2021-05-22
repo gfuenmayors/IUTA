@@ -44,7 +44,6 @@ class Forma
 	{ 
 		system("CLS"); MenuOpciones[1] = 0;
 		if(CoordenadaX == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
-		else if(CoordenadaY == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL X: " << CoordenadaX; 
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (X) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
@@ -57,6 +56,7 @@ class Forma
 		}
 		//--------------------------------------------------------------------
 		system("CLS"); MenuOpciones[2] = 0;
+		if(CoordenadaY == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL Y: " << CoordenadaY; 
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (Y) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
