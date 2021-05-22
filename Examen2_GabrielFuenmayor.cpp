@@ -13,7 +13,7 @@ class Forma
 		string Color;
 		int EnRectangulo;
 		
-	Forma() { Coordenada = 0; Color = "MORADO"; Nombre = "OBJETO01"; EnRectangulo = 0; }
+	Forma() { Coordenada = 0; Color = "MORADO"; Nombre = "OBJETO 01"; EnRectangulo = 0; }
 	void ImprimirForma()
 	{
 		if(EnRectangulo == 0)
