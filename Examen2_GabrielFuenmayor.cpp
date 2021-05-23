@@ -44,6 +44,7 @@ class Forma
 	{ 
 		system("CLS"); MenuOpciones[1] = 0;
 		if(CoordenadaX == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
+		else if(CoordenadaY == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL X: " << CoordenadaX; 
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (X) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
@@ -56,7 +57,6 @@ class Forma
 		}
 		//--------------------------------------------------------------------
 		system("CLS"); MenuOpciones[2] = 0;
-		if(CoordenadaY == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
 		cout << "\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL Y: " << CoordenadaY; 
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (Y) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
@@ -78,23 +78,7 @@ class Rectangulo: public Forma
 		float LadoMenor, LadoMayor, Area, Perimetro, Escala, EscalaConsulta, rLadoMenor, rLadoMayor;
 		
 	Rectangulo() { LadoMayor = 0; LadoMenor = 0; Escala = 0; }
-	void AsignarLadoMenor() 
-	{ 
-		system("CLS"); MenuOpciones[0] = 0;
-		if(LadoMenor == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
-		cout << "\t|--------------------------------------------|\n"; 
-		cout << "\n\tVALOR ACTUAL DEL LADO MENOR DEL RECTANGULO: " << LadoMenor; 
-		cout << "\n\n\tDESEA CAMBIAR EL VALOR DEL LADO MENOR ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
-		cout << "\n\t|--------------------------------------------|\n\n\t";
-		cin >> MenuOpciones[0];
-		if(MenuOpciones[0] == 1)
-		{
-			cout << "\n\tINGRESE EL NUEVO VALOR DEL LADO MENOR DEL RECTANGULO: ";
-			cin >> LadoMenor;
-			rLadoMenor = LadoMenor;
-		}
-	}
-	void AsignarLadoMayor() 
+	void Lados() 
 	{ 
 		system("CLS"); MenuOpciones[1] = 0;
 		if(LadoMayor == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
@@ -108,6 +92,20 @@ class Rectangulo: public Forma
 			cout << "\n\tINGRESE EL NUEVO VALOR DEL LADO MAYOR DEL RECTANGULO: ";
 			cin >> LadoMayor;
 			rLadoMayor = LadoMayor;
+		}
+		//--------------------------------------------------------------------
+		system("CLS"); MenuOpciones[0] = 0;
+		if(LadoMenor == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
+		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\tVALOR ACTUAL DEL LADO MENOR DEL RECTANGULO: " << LadoMenor; 
+		cout << "\n\n\tDESEA CAMBIAR EL VALOR DEL LADO MENOR ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
+		cout << "\n\t|--------------------------------------------|\n\n\t";
+		cin >> MenuOpciones[0];
+		if(MenuOpciones[0] == 1)
+		{
+			cout << "\n\tINGRESE EL NUEVO VALOR DEL LADO MENOR DEL RECTANGULO: ";
+			cin >> LadoMenor;
+			rLadoMenor = LadoMenor;
 		}
 	}
 	void AsignarEscala() 
@@ -166,7 +164,7 @@ main()
 	{
 		if(menu[0] == 0) // MENU PRINCIPAL
 		{
-			system("CLS");
+			system("CLS"); system("color 3F");
 			if(obj1.CoordenadaX == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA"; }
 			else if(obj1.CoordenadaY == 0) { cout << "\n\tPRIMERO DEBE DEFINIR LAS VARIABLES DE LA FORMA"; }
 			cout << "\n\n\tELIJA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n\t1 - DEFINIR FORMA\n\t2 - DEFINIR RECTANGULO\n\t3 - SALIR\n\t";
@@ -174,7 +172,7 @@ main()
 		}
 		else if(menu[0] == 1) // DEFINIR FORMA
 		{
-			system("CLS");
+			system("CLS"); 
 			//-------------------------------------
 			if(obj1.CoordenadaX == 0) menu[1] = 2; // VALIDACION DE LA COORDENADA X DEL CENTRO DE LA FORMA
 			else if(obj1.CoordenadaY == 0) menu[1] = 2; // VALIDACION DE LA COORDENADA Y DEL CENTRO DE LA FORMA
@@ -195,25 +193,24 @@ main()
 		{
 			system("CLS");
 			if(obj1.LadoMayor == 0) menu[2] = 1; // VALIDACION DEL LADO MAYOR DEL RECTANGULO
-			else if(obj1.LadoMenor == 0) menu[2] = 2; // VALIDACION DEL LADO MENOR DEL RECTANGULO
-			else if(obj1.Escala == 0) menu[2] = 3; // VALIDACION DE LA ESCALA DEL RECTANGULO
+			else if(obj1.LadoMenor == 0) menu[2] = 1; // VALIDACION DEL LADO MENOR DEL RECTANGULO
+			else if(obj1.Escala == 0) menu[2] = 2; // VALIDACION DE LA ESCALA DEL RECTANGULO
 			else 
 			{
 				cout << "\n\n\n\t[ DEFINIR RECTANGULO ]\n\n";
-				cout << "\tELIJA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n\t1 - CAMBIAR VALOR MAYOR AL RECTANGULO\n\t2 - CAMBIAR VALOR MENOR AL RECTANGULO\n\t3 - CAMBIAR ESCALA DEL RECTANGULO\n\t4 - IMPRIMIR RECTANGULO\n\t5 - VOLVER\n\t";
+				cout << "\tELIJA UNA DE LAS SIGUIENTES OPCIONES PARA CONTINUAR: \n\n\t1 - CAMBIAR LADOS DEL RECTANGULO\n\t2 - CAMBIAR ESCALA DEL RECTANGULO\n\t3 - IMPRIMIR RECTANGULO\n\t4 - VOLVER\n\t";
 				cin >> menu[2];	
 			}
 			//-------------------------------------
-			if(menu[2] == 1) { obj1.AsignarLadoMayor(); menu[0] = 2; } // ASIGNAR VALOR AL LADO MAYOR DEL RECTANGULO			
-			else if(menu[2] == 2) { obj1.AsignarLadoMenor(); menu[0] = 2; } // ASIGNAR VALOR AL LADO MENOR DEL RECTANGULO
-			else if(menu[2] == 3) { obj1.AsignarEscala(); menu[0] = 2; } // ASIGNAR LA ESCALA DEL RECTANGULO
-			else if(menu[2] == 4) // IMPRIMIR RECTANGULO
+			if(menu[2] == 1) { obj1.Lados(); menu[0] = 2; } // ASIGNAR VALOR AL LADO MAYOR DEL RECTANGULO			
+			else if(menu[2] == 2) { obj1.AsignarEscala(); menu[0] = 2; } // ASIGNAR LA ESCALA DEL RECTANGULO
+			else if(menu[2] == 3) // IMPRIMIR RECTANGULO
 			{
 				if(obj1.CoordenadaX == 0) { obj1.Mover(); menu[0] = 2; } // VALIDACION DE LA COORDENADA X DEL CENTRO DE LA FORMA
 				else if(obj1.CoordenadaY == 0) { obj1.Mover(); menu[0] = 2; } // VALIDACION DE LA COORDENADA Y DEL CENTRO DE LA FORMA
 				else { obj1.EnRectangulo = 1; obj1.ImprimirRectangulo(); menu[0] = 2; } // IMPRIMIR
 			}
-			else if(menu[2] == 5) menu[0] = 0; // VOLVER AL MENU PRINCIPAL
+			else if(menu[2] == 4) menu[0] = 0; // VOLVER AL MENU PRINCIPAL
 			else { system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); } // NO RECONOCE OPCION DE LA LISTA
 		}
 		else if(menu[0] == 3) // SALIR DEL PROGRAMA
