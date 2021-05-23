@@ -33,11 +33,7 @@ class Forma
 		cout << "\n\n\tDESEA CAMBIAR EL COLOR ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[0];
-		if(MenuOpciones[0] == 1)
-		{
-			cout << "\n\tINGRESE EL NUEVO COLOR DE LA FORMA: ";
-			cin >> Color;
-		}
+		if(MenuOpciones[0] == 1) { cout << "\n\tINGRESE EL NUEVO COLOR DE LA FORMA: "; cin >> Color; }
 	}
 	void Mover() 
 	{ 
@@ -48,11 +44,7 @@ class Forma
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (X) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[1];
-		if(MenuOpciones[1] == 1)
-		{
-			cout << "\n\tINGRESE LA NUEVA COORDENADA(X) DEL CENTRO DE LA FORMA: ";
-			cin >> Coordenada[0];
-		}
+		if(MenuOpciones[1] == 1) { cout << "\n\tINGRESE LA NUEVA COORDENADA(X) DEL CENTRO DE LA FORMA: "; cin >> Coordenada[0]; }
 		//--------------------------------------------------------------------
 		system("CLS"); MenuOpciones[2] = 0;
 		if(Coordenada[1] == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
@@ -61,11 +53,7 @@ class Forma
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (Y) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[2];
-		if(MenuOpciones[2] == 1)
-		{
-			cout << "\n\tINGRESE LA NUEVA COORDENADA(Y) DEL CENTRO DE LA FORMA: ";
-			cin >> Coordenada[1];
-		}
+		if(MenuOpciones[2] == 1) { cout << "\n\tINGRESE LA NUEVA COORDENADA(Y) DEL CENTRO DE LA FORMA: "; cin >> Coordenada[1]; }
 	}
 };
 
@@ -86,11 +74,7 @@ class Rectangulo: public Forma
 		cout << "\n\n\tDESEA CAMBIAR EL VALOR DEL LADO MAYOR ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[1];
-		if(MenuOpciones[1] == 1)
-		{
-			cout << "\n\tINGRESE EL NUEVO VALOR DEL LADO MAYOR DEL RECTANGULO: ";
-			cin >> Lado[0];
-		}
+		if(MenuOpciones[1] == 1) { cout << "\n\tINGRESE EL NUEVO VALOR DEL LADO MAYOR DEL RECTANGULO: "; cin >> Lado[0]; }
 		//--------------------------------------------------------------------
 		system("CLS"); MenuOpciones[0] = 0;
 		if(Lado[1] == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
@@ -99,11 +83,7 @@ class Rectangulo: public Forma
 		cout << "\n\n\tDESEA CAMBIAR EL VALOR DEL LADO MENOR ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[0];
-		if(MenuOpciones[0] == 1)
-		{
-			cout << "\n\tINGRESE EL NUEVO VALOR DEL LADO MENOR DEL RECTANGULO: ";
-			cin >> Lado[1];
-		}
+		if(MenuOpciones[0] == 1) { cout << "\n\tINGRESE EL NUEVO VALOR DEL LADO MENOR DEL RECTANGULO: "; cin >> Lado[1]; }
 	}
 	void AsignarEscala() 
 	{ 
@@ -114,11 +94,7 @@ class Rectangulo: public Forma
 		cout << "\n\n\tDESEA CAMBIAR EL VALOR DE LA ESCALA ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
 		cin >> MenuOpciones[2];
-		if(MenuOpciones[2] == 1)
-		{
-			cout << "\n\tINGRESE EL NUEVO VALOR DE LA ESCALA DEL RECTANGULO: ";
-			cin >> Escala;
-		}
+		if(MenuOpciones[2] == 1) { cout << "\n\tINGRESE EL NUEVO VALOR DE LA ESCALA DEL RECTANGULO: "; cin >> Escala; }
 	}
 	void ImprimirRectangulo()
 	{
@@ -213,8 +189,12 @@ main()
 			{
 				system("CLS");
 				cout << "\n\n\tSEGURO QUE QUIERES SALIR?\n\n\t1 - NO\n\t2 - SI\n\t"; cin >> s;
-				if(s != 1) s = 0;
-				else menu[0] = 0;
+				switch(s)
+				{
+					case 1: menu[0] = 0; break;
+					case 2: s = 0; break;
+					default: menu[0] = 0; s = 1; break;
+				}
 				break;
 			}
 			default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); menu[0] = 0; break; // NO RECONOCE OPCION DE LA LISTA
