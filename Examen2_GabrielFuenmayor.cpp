@@ -142,8 +142,9 @@ class Rectangulo: public Forma
 
 class Cuadrado: Rectangulo { };
 
-int Menu()
+main()
 {
+	system("color 3F");
 	int menu[3] = {0,0,0}, s = 1;
 	Rectangulo obj1;
 	while(s == 1)
@@ -219,11 +220,5 @@ int Menu()
 			default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); menu[0] = 0; break; // NO RECONOCE OPCION DE LA LISTA
 		}
 	}
-	system("CLS");  cout << "\n\n\n\tGRACIAS POR USAR EL PROGRAMA.\n\n\n\t"; system("PAUSE");	
-}
-
-main()
-{
-	system("color 3F");
-	Menu();
+	system("CLS");  cout << "\n\n\n\tGRACIAS POR USAR EL PROGRAMA.\n\n\n\t"; system("PAUSE");
 }
