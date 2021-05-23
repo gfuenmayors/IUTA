@@ -28,7 +28,7 @@ class Forma
 	void AsignarColor() 
 	{ 
 		system("CLS"); MenuOpciones = 0;
-		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOLOR ACTUAL: " << Color; 
 		cout << "\n\n\tDESEA CAMBIAR EL COLOR ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
@@ -39,7 +39,7 @@ class Forma
 	{ 
 		system("CLS"); MenuOpciones = 0;
 		if(Coordenada[0] == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
-		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL X: " << Coordenada[0]; 
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (X) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
@@ -48,7 +48,7 @@ class Forma
 		//--------------------------------------------------------------------
 		system("CLS"); MenuOpciones = 0;
 		if(Coordenada[1] == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
-		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\t|--------------------------------------------|\n"; 
 		cout << "\n\tCOORDENADA ACTUAL Y: " << Coordenada[1]; 
 		cout << "\n\n\tDESEA CAMBIAR LA COORDENADA (Y) DEL CENTRO ACTUAL DE LA FORMA?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
@@ -69,7 +69,7 @@ class Rectangulo: public Forma
 	{ 
 		system("CLS"); MenuOpciones = 0;
 		if(Lado[0] == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
-		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\t|--------------------------------------------|\n"; 
 		cout << "\n\tVALOR ACTUAL DEL LADO MAYOR DEL RECTANGULO: " << Lado[0]; 
 		cout << "\n\n\tDESEA CAMBIAR EL VALOR DEL LADO MAYOR ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
@@ -78,7 +78,7 @@ class Rectangulo: public Forma
 		//--------------------------------------------------------------------
 		system("CLS"); MenuOpciones = 0;
 		if(Lado[1] == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
-		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\t|--------------------------------------------|\n"; 
 		cout << "\n\tVALOR ACTUAL DEL LADO MENOR DEL RECTANGULO: " << Lado[1]; 
 		cout << "\n\n\tDESEA CAMBIAR EL VALOR DEL LADO MENOR ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
@@ -89,7 +89,7 @@ class Rectangulo: public Forma
 	{ 
 		system("CLS"); MenuOpciones = 0;
 		if(Escala == 0) cout << "\n\tPRIMERO DEBE DEFINIR LA SIGUIENTE VARIABLE:\n\n";
-		cout << "\t|--------------------------------------------|\n"; 
+		cout << "\n\t|--------------------------------------------|\n"; 
 		cout << "\n\tVALOR ACTUAL DE LA ESCALA DEL RECTANGULO: " << Escala; 
 		cout << "\n\n\tDESEA CAMBIAR EL VALOR DE LA ESCALA ACTUAL DEL RECTANGULO?\n\n\t1 - SI\n\t2 - NO\n";
 		cout << "\n\t|--------------------------------------------|\n\n\t";
@@ -150,10 +150,10 @@ main()
 				switch(menu[1])
 				{
 					case 1: obj1.AsignarColor(); menu[0] = 1; break; // ASIGNAR COLOR A LA FORMA
-					case 2:	obj1.Mover(); menu[0] = 1; break; // ASIGNAR VALOR AL CENTRO DE LA FORMA
+					case 2:	obj1.Mover(); menu[0] = 1; break; // ASIGNAR VALOR A LAS COORDENADAS DEL CENTRO DE LA FORMA
 					case 3: obj1.EnRectangulo = 0; obj1.ImprimirForma(); menu[0] = 1; break; // IMPRIMIR DATOS DE LA FORMA 
 					case 4: menu[0] = 0; break; // VOLVER AL MENU PRINCIPAL
-					default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); break; // NO RECONOCE OPCION DE LA LISTA
+					default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n\t"; system("PAUSE"); break; // NO RECONOCE OPCION DE LA LISTA
 				}
 				break;
 			}
@@ -171,7 +171,7 @@ main()
 				}
 				switch(menu[2])
 				{
-					case 1: obj1.Lados(); menu[0] = 2; break; // ASIGNAR VALOR AL LADO MAYOR DEL RECTANGULO	
+					case 1: obj1.Lados(); menu[0] = 2; break; // ASIGNAR VALOR A LOS LADOS DEL RECTANGULO	
 					case 2: obj1.AsignarEscala(); menu[0] = 2; break; // ASIGNAR LA ESCALA DEL RECTANGULO
 					case 3: // IMPRIMIR RECTANGULO
 					{
@@ -181,7 +181,7 @@ main()
 						break;
 					}
 					case 4: menu[0] = 0; break; // VOLVER AL MENU PRINCIPAL
-					default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); break; // NO RECONOCE OPCION DE LA LISTA	
+					default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n\t"; system("PAUSE"); break; // NO RECONOCE OPCION DE LA LISTA	
 				}
 				break;
 			}
@@ -197,7 +197,7 @@ main()
 				}
 				break;
 			}
-			default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n"; system("PAUSE"); menu[0] = 0; break; // NO RECONOCE OPCION DE LA LISTA
+			default: system("CLS"); cout << "\n\n\tERROR: DEBE ELEGIR UNA OPCION DE LA LISTA\n\n\t"; system("PAUSE"); menu[0] = 0; break; // NO RECONOCE OPCION DE LA LISTA
 		}
 	}
 	system("CLS");  cout << "\n\n\n\tGRACIAS POR USAR EL PROGRAMA.\n\n\n\t"; system("PAUSE");
