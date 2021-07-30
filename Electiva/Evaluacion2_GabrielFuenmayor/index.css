@@ -1,0 +1,150 @@
+/* Fondo - Fuente de la pagina */
+* {
+	font-family: Arial;
+}
+
+body {
+	background: #6bcad7;
+}
+
+/* Cuadro contenedor del contenido */
+.cuerpo {
+	margin: 0 12.5rem;
+	background: white;
+}
+
+/* Logo de la pagina */
+.titulo {
+	margin: 5rem 2rem;
+	padding: 4rem;
+	background-image: url(imagenes/Logo-Suministros.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: 20% 50%;
+	text-align: center;
+	font-size: 15px;
+}
+
+/* Barra de Navegación */
+.nav {
+	float: right;
+	color: black;
+	margin: -10rem 2rem;
+	padding: 0 2rem;
+	text-align: right;
+}
+
+/* Boton en la barra de navegación */
+.nav input {
+	border-radius: 30px 30px 30px 30px;
+	margin: -.5rem;
+	padding: .3rem 1.5rem;
+	color: white;
+	background: #70a8b0;
+	border-color: #70a8b0;
+}
+
+/* Cambio de color del boton en la barra de navegación al pasar el cursor */
+.nav input:hover {
+	cursor: pointer;
+	background: white;
+	color: black;
+	border-color: #70a8b0;
+}
+
+/* Imagenes en la barra de navegación */
+.nav img {
+	width: 12%; 
+	height: 2.3%;
+	padding: 0 5px;
+}
+
+/* Enlaces en la barra de navegación */
+.nav a {
+	text-decoration: none;
+	color: #000000;
+	text-align: center;
+}
+
+/* Cambiar estilo del texto del enlace y ponerle sobra al pasar el cursor */
+.nav a:hover {
+	font-style: italic;
+	font-size: 16px;
+	text-shadow: 2px 2px 8px #6bcad7;
+}
+
+/* Lista en la barra de navegación */
+.nav li {
+	display: inline-block;
+	padding: 1rem .7rem;
+	text-align: center;
+}
+
+/* Titulo del texto de la pagina */
+.texto-contenedor h1 {
+	color: #4b8088;
+	margin: 2rem;
+	margin-top: -2rem;
+}
+
+/* Texto de la pagina */
+.texto-contenedor p {
+	color: #678e93;
+	margin: 2rem;
+	padding: 0 0 .5rem;
+}
+
+/* Posicion del boton leer mas */
+.leermas {
+	margin: 0 1rem;
+	margin-top: -2rem;
+}
+
+/* Estilo del boton leer mas */
+.leermas input {
+	border-radius: 30px 30px 30px 30px;
+	margin: 1rem;
+	padding: .3rem 1.5rem;
+	color: white;
+	background: #70a8b0;
+	border-color: #70a8b0;
+}
+
+/* Cambiar estilo del boton leer mas al pasar el cursor */
+.leermas input:hover {
+	cursor: pointer;
+	background: white;
+	color: black;
+	border-color: #70a8b0;
+}
+
+/* Imagen principal de la pagina */
+.imagenes-contenedor img {
+	float: right;
+	width: 40%; 
+	height: 40%;
+	margin: -5.5rem 1.8rem;
+	border: 2px solid #6bcad7;
+}
+
+/* Pie de pagina */
+footer {
+	margin: -1rem 12.5rem;
+	background: white;
+	padding: .5rem 2rem;
+	color: #4b8088;
+	text-align: right;
+}
+
+/* Imagenes en el pie de pagina */
+footer img {
+	width: 20px; 
+	height: 20px;
+}
+
+/* Listado de items en el pie de pagina */
+footer ul, li {
+	float: left;
+	padding: 0.2rem;
+	display: inline-block;
+}
