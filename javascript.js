@@ -16,7 +16,7 @@ form.addEventListener("submit", e => {
     if(usuario.value.length) {
         if(usuario.value.length < 6) {
             noentrar = true
-            error += 'El usuario debe ser valido</br>'
+            error += 'El usuario debe ser válido</br>'
         }
     }
     else{
@@ -26,7 +26,7 @@ form.addEventListener("submit", e => {
     if(correo.value.length) {
         if(!comprobarcorreo.test(correo.value)) {
             noentrar = true
-            error += 'El correo debe ser valido</br>'
+            error += 'El correo debe ser válido</br>'
         }
     }
     else{
@@ -36,12 +36,12 @@ form.addEventListener("submit", e => {
     if(clave.value.length) {
         if(clave.value.length < 6) {
             noentrar = true
-            error += 'La contraseña debe ser valida</br>'
+            error += 'La contraseña debe ser válida</br>'
         }
         else {
             if(!comprobarclave.test(clave.value)) {
                 noentrar = true
-                error += 'Introduzca 3 caracteres númericos en la contraseña</br>'
+                error += 'Introduzca 3 caracteres numéricos en la contraseña</br>'
             }
         }
     }
