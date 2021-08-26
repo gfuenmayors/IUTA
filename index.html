@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Evaluación 3 - Gabriel Fuenmayor</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body>
+        <h1 class="logo"><span>REGISTRO</span></h1>
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <center><h3>Llena los Campos</h3></center>
+                <form method="post" id="registro" action="#">
+                    <p>
+                        <label>Nombre de Usuario</label>
+                        <input type="text" name="usuario" id="usuario" required>
+                    </p>
+                    <p>
+                        <label>Correo Eléctronico</label>
+                        <input type="text" name="correo" id="correo" required>
+                    </p>
+                    <p>
+                        <label>Contraseña</label>
+                        <input type="password" name="clave" id="clave" required>
+                    </p>
+                    <p class="block">
+                        <button type="submit">Enviar</button>
+                    </p>
+                </form>
+                <p class="error" id="error"></p>
+            </div>
+        </div>
+    <!-- JAVASCRIPT -->
+    <script src="javascript.js"></script>    
+</body>
+</html>
