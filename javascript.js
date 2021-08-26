@@ -52,10 +52,12 @@ form.addEventListener("submit", e => {
 
     if(noentrar)
     {
+        errorhtml.style.visibility = "visible"
         errorhtml.innerHTML = error
     }
     else
     {
+        errorhtml.style.visibility = "visible"
         errorhtml.innerHTML = '¡Usuario Registrado!'
     }
 })
