@@ -13,7 +13,7 @@ body {
 }
 
 .contact-wrapper {
-    padding-top: 6.1em;
+    padding-top: 4em;
     padding-bottom: 100%;
 }
 
@@ -61,11 +61,20 @@ body {
 
 .error {
     box-sizing: border-box;
+    background: #ec8f8f;
     border-radius: 15px;
-    background: #fff;
-    text-align: center;
+    color: rgb(90, 7, 7);
     margin: auto;
-    color: #d63031;
+    text-align: center;
+    visibility: hidden;
+}
+.exitoso  {
+    box-sizing: border-box;
+    background: #8fec8f;
+    border-radius: 15px;
+    color: rgb(21, 92, 53);
+    margin-top: -2em;
+    text-align: center;
     visibility: hidden;
 }
 
